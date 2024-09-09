@@ -33,7 +33,7 @@ public class VehicleServiceTest {
     }
 
     @Test
-    public void testAddVehicle_Success() {
+     void testAddVehicle_Success() {
         Vehicle vehicle = new Vehicle();
         vehicle.setVehicleNo("AP36AL3691");
         vehicle.setVehicleName("Vehicle1");
@@ -52,7 +52,7 @@ public class VehicleServiceTest {
     }
 
     @Test
-    public void testAddVehicle_AlreadyExists() {
+     void testAddVehicle_AlreadyExists() {
         Vehicle vehicle = new Vehicle();
         vehicle.setVehicleNo("AP36AL3691");
 
@@ -65,7 +65,7 @@ public class VehicleServiceTest {
     }
 
     @Test
-    public void testDeleteVehicle_Success() {
+     void testDeleteVehicle_Success() {
         Vehicle vehicle = new Vehicle();
         vehicle.setVehicleNo("AP36AL3691");
 
@@ -77,7 +77,7 @@ public class VehicleServiceTest {
     }
 
     @Test
-    public void testDeleteVehicle_NotFound() {
+     void testDeleteVehicle_NotFound() {
         when(vehicleRepository.findByVehicleNo("AP36AL3691")).thenReturn(Optional.empty());
 
         Exception exception = assertThrows(ResourceNotFoundException.class, () -> {
@@ -90,7 +90,7 @@ public class VehicleServiceTest {
    
 
     @Test
-    public void testGetVehicleByNo_Success() {
+     void testGetVehicleByNo_Success() {
         Vehicle vehicle = new Vehicle();
         vehicle.setVehicleNo("AP36AL3691");
 
@@ -102,7 +102,7 @@ public class VehicleServiceTest {
     }
 
     @Test
-    public void testGetVehicleByNo_NotFound() {
+     void testGetVehicleByNo_NotFound() {
         when(vehicleRepository.findByVehicleNo("AP36AL3691")).thenReturn(Optional.empty());
 
         Exception exception = assertThrows(ResourceNotFoundException.class, () -> {
